@@ -23,25 +23,74 @@ const allImgElm = [
 ];
 
 // dateUIElm.style.backgroundImage = allImgElm[1];
-function randomNumber(arr)
+function randomNumber(arr,bodyBackround)
 {
-	let receveIndexNumber = [];
-
-	for(let i = 1; i <= arr.length; i++)
-	{
-		receveIndexNumber.push(i)
-	}
-
-	console.log(...receveIndexNumber);
-	
-	// console.log(Math.ceil(Math.random() * 3))
+	let getLength = arr.length;
+	// i have generated random number
+	let randomNum = Math.ceil(Math.random() * getLength);
+	// applying backround image to the ui
+	// bodyBackround.style.backgroundImage = arr[randomNum];
+	bodyBackround.style.backgroundImage = arr[randomNum];
 }
-randomNumber(allImgElm)
+
+
+//-----------------------------
+//	Create another date function for changing bodyBackround
+//-----------------------------
+function anotherDateFun()
+{
+	const date = new Date();
+	
+	let hours = date.getHours();
+	let minutes = date.getMinutes();
+	let seconds = date.getSeconds();
+	let amOrPm = 'am';
+	// condition checking start here
+	const currentTime = anotherSetConditionFun(hours,minutes,seconds,amOrPm);
+
+	// ------------------------------------
+		randomNumber(allImgElm,bodyElm);
+	// ------------------------------------
+	return currentTime;
+}
+
+// another condition funciton 
+
+// i just separate my code for cleane coding
+function anotherSetConditionFun(hours,minutes,seconds,amOrPm)
+{
+	amOrPm = amOrPm > 12 ? "pm" : amOrPm;
+	hours = hours > 12 ? hours - 12 :  hours; 
+	// adding 0 with number 
+	hours = hours < 10 ? '0' + hours : hours;
+	minutes = minutes < 10 ? '0' + minutes : minutes;
+	seconds = seconds < 10 ? '0' + seconds : seconds;
+	return `${hours}:${minutes}:${seconds} ${amOrPm}`;
+}
+
+// another setInterval function
+const anotherSetInter = setInterval(() => 
+{
+	// after five minutes later it will change it's background
+	dateUIElm.innerHTML = anotherDateFun();
+	
+},500000);
+// clearInterval(anotherSetInter);
+
+
+//--------------------
+//----- End anther funciton ------------
+//--------------------
 
 
 
-// document.body.style.backgroundImage = "url('img_tree.png')";
 
+
+
+
+
+
+// date function
 function dateFun()
 {
 	const date = new Date();
@@ -53,9 +102,11 @@ function dateFun()
 	// condition checking start here
 	const currentTime = setTimeCondition(hours,minutes,seconds,amOrPm);
 
+
+	// randomNumber(allImgElm,bodyElm);
 	return currentTime;
 }
-
+// i just separate my code for cleane coding
 function setTimeCondition(hours,minutes,seconds,amOrPm)
 {
 	amOrPm = amOrPm > 12 ? "pm" : amOrPm;
