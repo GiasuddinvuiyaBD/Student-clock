@@ -1,16 +1,25 @@
+@import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond&family=Courgette&family=Lobster&family=Open+Sans&family=PT+Serif&family=Quicksand&family=Roboto&family=Silkscreen&display=swap');
 body 
 {
 	margin: 0;
 	padding: 0;
+	height: 50vh;
 	box-sizing: border-box;
+	background-image: url("../image/img-11.jpg");
+	background-position: center;
+	background-size: cover;
+	background-repeat: no-repeat;
 }
 
 
+                 
 #dateUI 
 {
 	margin: 250px 0 0 0;
-	font-size: 30px;
+	color: #efefef;
+	font-size: 50px;
 	text-align: center;
+	font-family: 'Silkscreen', cursive;
 }
 
 
