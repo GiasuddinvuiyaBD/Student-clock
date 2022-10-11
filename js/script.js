@@ -22,6 +22,47 @@ const allImgElm = [
 	"url('image/img-11.jpg')",
 ];
 
+
+
+	
+// ------------------------- date -----------------------------
+const dateElm = document.querySelector('.dates');
+function settingDate()
+{
+	const today = new Date();
+	let months = ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'June', 'July', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec'];
+    let days = ['Sun', 'Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat'];
+
+    let curWeekDay = days[today.getDay()];
+    let curDay = today.getDate();
+    let curMonth = months[today.getMonth()];
+    let curYear = today.getFullYear();
+ 
+    let dates = `${curWeekDay} ${curDay} ${curMonth} ${curYear}`;
+
+    console.log(dates)
+    // let date = curWeekDay+", "+curDay+" "+curMonth+" "+curYear;
+   dateElm.innerHTML = dates;
+    
+   
+
+}
+ let time = setTimeout(() => 
+{
+ settingDate() 
+}, 500);
+
+
+    
+
+// ------------------------- date -----------------------------
+
+
+
+
+
+
+
 // dateUIElm.style.backgroundImage = allImgElm[1];
 function randomNumber(arr,bodyBackround)
 {
@@ -74,7 +115,7 @@ const anotherSetInter = setInterval(() =>
 	// after five minutes later it will change it's background
 	dateUIElm.innerHTML = anotherDateFun();
 	
-},500000);
+},50000);
 // clearInterval(anotherSetInter);
 
 

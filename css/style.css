@@ -5,11 +5,12 @@ body
 	padding: 0;
 	height: 50vh;
 	box-sizing: border-box;
-	background-image: url("../image/img-11.jpg");
+	background-image: url("../image/img-6.jpg");
 	background-position: center;
 	background-size: cover;
 	background-repeat: no-repeat;
 }
+
 
 
                  
@@ -22,5 +23,13 @@ body
 	font-family: 'Silkscreen', cursive;
 }
 
-
-
+/*date start here*/
+.dates 
+{
+    margin-top: 10px;
+    margin-left: -205px;
+    font-size: 18px;
+    font-family: 'Silkscreen', cursive;
+    text-align: center;
+    color: #fff;
+}
