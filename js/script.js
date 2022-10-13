@@ -7,6 +7,12 @@
 	const dateUIElm = document.querySelector('#dateUI');
 	const bodyElm = document.querySelector('body');
 	const dateElm = document.querySelector('.dates');
+	const changeBackroundElm = document.querySelector('.changeBackround');
+	const defaultChangingElm = document.querySelector('.defaultChanging');
+	const buttonElm = document.querySelectorAll('button');
+
+	// seeting audio 
+	const buttonAudio = new Audio("audio/final-button.wav");
 
 	// ----------------------------- Time setting start here -----------------------------
 	// date function
@@ -71,7 +77,7 @@
 
 
 	// ------------------------------------Randomly value change start here -------------------------------
-	const allImgElm = ["url('image/b.jpg')","url('image/default-backround.jpg')","url('image/img-1.jpg')","url('image/img-2.jpg')","url('image/img-3.jpg')","url('image/img-4.jpg')","url('image/img-5.jpg')","url('image/img-6.jpg')","url('image/img-7.jpg')","url('image/img-8.jpg')","url('image/img-9.jpg')","url('image/img-10.jpg')","url('image/img-11.jpg')"];
+	const allImgElm = ["url('image/b.jpg')","url('image/default-backround.jpg')","url('image/img-1.jpg')","url('image/img-2.jpg')","url('image/img-3.jpg')","url('image/img-4.jpg')","url('image/img-5.jpg')","url('image/img-6.jpg')","url('image/img-7.jpg')","url('image/img-8.jpg')","url('image/img-9.jpg')","url('image/img-10.jpg')","url('image/img-11.jpg')","url('image/img-12.jpg')","url('image/img-13.jpg')","url('image/img-14.jpg')","url('image/img-15.jpg')","url('image/img-17.jpg')"];
 	// dateUIElm.style.backgroundImage = allImgElm[1];
 	function randomNumber(arr,bodyBackround)
 	{
@@ -116,11 +122,58 @@
 	}
 
 	// another setInterval function
-	const anotherSetInter = setInterval(() => 
+	let anotherSetInter = null; 
+	// it will be start after browser loading
+	anotherSetInter = setInterval(() => 
 	{
-		// after five minutes later it will change it's background
+		// after 1 minute later it will change it's background
 		dateUIElm.innerHTML = anotherDateFun();
 		
-	},50000);
+	},10000);
+
+	// stop default changing backround
+	defaultChangingElm.addEventListener('click',(evt) => 
+	{
+		// sound effect start here 
+		buttonAudio.play();
+		// It will be start after default button clicking
+		anotherSetInter = setInterval(() => 
+		{
+			// after 1 minute later it will change it's background
+			dateUIElm.innerHTML = anotherDateFun();
+			
+		},10000);
+	});
+
+	defaultChangingElm.addEventListener('mouseup',(evt) => 
+	{
+		defaultChangingElm.style.border = '1px solid #fff';
+	});
+	defaultChangingElm.addEventListener('mousedown',(evt) => 
+	{
+		defaultChangingElm.style.border = '2px solid #fff';
+	});
 	// ------------------------------------Randomly value change End here -------------------------------
+
+	/*Change backround button start here */
+	changeBackroundElm.addEventListener('click',(evt) => 
+	{
+		evt.preventDefault();
+		// sound effect start here 
+		buttonAudio.play();
+		// image changing function
+		anotherDateFun();
+		// stoping 
+		clearInterval(anotherSetInter);
+	});
+	
+	changeBackroundElm.addEventListener('mouseup',(evt) => 
+	{
+		changeBackroundElm.style.border = '1px solid #fff';
+	});
+	changeBackroundElm.addEventListener('mousedown',(evt) => 
+	{
+		changeBackroundElm.style.border = '2px solid #fff';
+	});
+
 })()

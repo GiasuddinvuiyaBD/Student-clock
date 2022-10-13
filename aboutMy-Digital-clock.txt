@@ -1,0 +1,40 @@
+Assalmu alaikum.
+How are you all, Actually I have completed my challenge project.
+My project name is Study clock. Now I want to talk about my study clock, At first i have taken three files number one is html, number two is css and number three is js .
+
+At first i maked markup for our project it maked in html file. After that i have taken a css file for designing. Then i have taken a javacript file for Date,Time and my logic that it's look like good.
+Now i want to talk about my javascirpt file.
+
+Start Here.
+At first i select the selector useing const keyword. Then i have taken a function name is dateFun(). Inside the funciton i have taken new Date() function for taking Hours,minuted,seconds. Then i have taken it's my Date constructor function. After that i have taken another funciton name is setTimeCondition(). I have taken this function for making logic. 
+For Example : How to work Hours,minuted,second and then is set if Hours < 10 it will add 0 in front the number.
+After all thing i complete then i set a funciton call setInterval(). Inside the setInterval funciton i called dateFun() funciton and i have seted 1000 millisecond in the setInterval function's as initial value.
+
+// Here is finished our time setting. part-1 in our javaScirpt file. In this part have complete Time.
+
+// Part-2: In this part i will complete Date.
+In our javascirpt file's part-2's i have taken a funciton called settingDate(). Inside this function i have taken Again Date funciton for taking Date And then  i wrot's some variable called today,months,days,curWeekDay,CurDay,CurMonth,curYear. Insert the month i have taken all months and inside the days have taken all the day of week. Then i set my logic after that i have completed this part.
+
+//part-3: In part3 i have taken an array called allImgElm. In the array i have passed all the image form image folder. Then i have taken an function called randomNumber() for generating a random number allImgElm length and i pass background image using style.background image. It will generate randomly.
+
+part-4: I have taken two button call Change Backround and Default Changing. Inside the javacript code i have seted my own logic if Change Backround click then it will change the backround randomly and it will stop default times which i seted setIntavel funciton. When click the  Default Changing. it will set again setIntavel function and i will change the background image after finished the initial time.
+Also i have seted sound effect in the button.
+
+
+
+// My Respectable teacher i have tryed my best to present my code and it's the fist time that i present my code.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

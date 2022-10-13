@@ -32,3 +32,26 @@ body
     text-align: center;
     color: #fff;
 }
+
+/*Button design start here*/
+.btn 
+{
+    margin: 200px 0px 0 18px;
+}
+
+.btn button {
+    margin: 5px;
+    padding: 10px;
+    font-size: 16px;
+    border: 1px solid #fff;
+    border-radius: 20px;
+    font-family: serif;
+    color: #efefef;
+    background: #000;
+    cursor: pointer;
+}
+
+.btn button:focus 
+{
+	border: 1px solid #fff;
+}
